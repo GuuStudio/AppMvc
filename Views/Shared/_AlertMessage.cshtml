@@ -1,11 +1,12 @@
 
 
 @{
-    string message = TempData["MyNotify"] as string ?? "";
+    string message = TempData["StatusMessage"] as string ?? "";
+    string nameAlert = message.StartsWith("Thành") ? "success" : "warning";
 }
 
 @if (!String.IsNullOrEmpty(message)) {
-    <div    class="alert alert-warning alert-dismisssble fabe show" role="alert">
+    <div    class="alert alert-@nameAlert alert-dismisssble fabe show" role="alert">
         @message
         <button type="button" class="close" data-dismiss="alert" aria-label="close">
             <span   aria-hidden="true">&times;</span>

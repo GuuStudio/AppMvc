@@ -1,0 +1,23 @@
+
+
+@model App.Models.PlanetModel
+
+
+@Url.Action()
+<h1>Các hành tinh @Model.Name</h1>
+
+<div class="list-group container justify-content-between">
+        <img  src="~/planet/@(Model.Name).jpg" style="Width: 500px; Height: 500px">
+        <div class="list-group-item list-group-item-action">
+            Tên : @Model.Name
+        </div>
+        <div class="list-group-item list-group-item-action">
+            Tên tiếng Việt : @Model.VnName
+        </div>
+        <div class="list-group-item list-group-item-action">
+            Mô tả : @Model.Content
+        </div>
+        <a class="btn btn-secondary mt-3" asp-controller="Planet" asp-action="Index" >
+            Quay lại
+        </a>
+</div>
