@@ -1,0 +1,16 @@
+
+
+@using App.Models
+
+@model List<ProductModel>
+
+
+<h1>Danh sách các sản phẩm</h1>
+
+<ul class="list-group">
+    @foreach(ProductModel product in Model) {
+        <li class="list-group-item">
+            @product.ID    |    @product.Name   |   @product.Price
+        </li>   
+    }
+</ul>
